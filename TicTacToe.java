@@ -11,6 +11,7 @@ public class TicTacToe
 		getBoard(); 
 		getPlayerChoice();  
 		currentBoard(); 
+		userMove();
 	}
 	//method for board
 	 static void getBoard() 
@@ -53,4 +54,19 @@ public class TicTacToe
 		// method to call showboard
 	        showBoard();
 	 }
+	static void userMove() 
+	{
+	        System.out.print("\nSelect the cell from 1 to 9 : ");
+	        int userChoice = scanner.nextInt();
+	        if (board[userChoice] != 'x' && board[userChoice] != 'o') 
+		{
+	            board[userChoice] = playerOption;
+	        }
+		 else 
+		{
+	            System.out.println("Invalid Cell");
+	        }
+	        //calling current board
+	        currentBoard();
+	    }
 }
